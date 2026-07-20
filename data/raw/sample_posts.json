@@ -1,0 +1,47 @@
+[
+  {
+    "id": "post_001",
+    "title": "Building Production RAG Pipelines with Qdrant and Llama 3",
+    "author": "AI Engineer",
+    "date": "2026-05-10",
+    "tags": ["RAG", "Qdrant", "Llama3", "VectorDB"],
+    "source_url": "https://blog.example.com/building-production-rag",
+    "content": "Retrieval-Augmented Generation (RAG) has evolved from simple similarity search into multi-stage production systems. In this post, I break down how we build production RAG using Qdrant vector database and Llama 3.\n\nFirst, naive vector search fails when queries are vague or context-dependent. To solve this, we implement Query Expansion: generating 3 alternative queries using a lightweight LLM before querying Qdrant. Second, hybrid search combining dense vector embeddings with sparse BM25 payload filters ensures high precision.\n\nFinally, we use a reranking model (like FlashRank) to sort the top 10 retrieved chunks down to the 3 most relevant snippets. Grounding our generator in these reranked snippets eliminates hallucinations and ensures responses reflect past author notes faithfully."
+  },
+  {
+    "id": "post_002",
+    "title": "Mastering QLoRA Fine-Tuning for Personal LLM Twins",
+    "author": "AI Engineer",
+    "date": "2026-05-18",
+    "tags": ["Fine-Tuning", "QLoRA", "Unsloth", "PyTorch"],
+    "source_url": "https://blog.example.com/mastering-qlora-fine-tuning",
+    "content": "Fine-tuning open-weight models no longer requires massive GPU clusters. With Quantized Low-Rank Adaptation (QLoRA), we can adapt an 8-billion parameter model on a single free NVIDIA T4 GPU on Google Colab.\n\nHere is our exact workflow: We quantize the base model weights to 4-bit NormalFloat (NF4) and freeze them. We then attach trainable low-rank adapter matrices (r=16, alpha=32) to the key attention projection layers (q_proj, k_proj, v_proj, o_proj).\n\nBy converting raw personal posts into instruction-response pairs, the model learns the author's tone, vocabulary, and sentence structure without catastrophic forgetting. We publish the lightweight 50MB LoRA adapter to Hugging Face Model Hub, ready for zero-latency inference."
+  },
+  {
+    "id": "post_003",
+    "title": "Designing LLM-as-a-Judge Evaluation Gates for Production",
+    "author": "AI Engineer",
+    "date": "2026-06-01",
+    "tags": ["Evaluation", "Opik", "LLM-as-a-Judge", "MLOps"],
+    "source_url": "https://blog.example.com/llm-as-a-judge-evaluations",
+    "content": "How do you know if your LLM application is ready for production? Traditional NLP metrics like BLEU or ROUGE fail to capture semantic accuracy and character style. Enter LLM-as-a-Judge.\n\nWe construct a Golden Evaluation Set consisting of 20 benchmark prompts representing real user questions. Each generated response is evaluated against three core metrics:\n1. Faithfulness: Did the LLM stick strictly to retrieved vector context?\n2. Relevancy: Did the response directly answer the prompt?\n3. Style Similarity: Does the tone match the target author's persona?\n\nUsing Opik and automated evaluator scripts, we set a production readiness gate score of 0.85/1.0. If a build falls below this threshold, deployment is automatically blocked."
+  },
+  {
+    "id": "post_004",
+    "title": "System Design: Microservices vs Serverless AI Workflows",
+    "author": "AI Engineer",
+    "date": "2026-06-15",
+    "tags": ["System Design", "Serverless", "FastAPI", "Cloud"],
+    "source_url": "https://blog.example.com/system-design-microservices-ai",
+    "content": "When architecting AI-powered platforms, engineers often face a dilemma: should you deploy monolithic microservices on Kubernetes or serverless functions on cloud platforms?\n\nFor LLM applications with bursty traffic, serverless API providers (like Groq, Modal, or Hugging Face Spaces) offer unmatched cost efficiency and zero idle costs. However, heavy stateful components like vector indexing pipelines benefit from dedicated background workers running FastAPI and Celery.\n\nOur recommended hybrid architecture decouples the synchronous user-facing RAG API from the asynchronous ETL data pipeline. This isolates data ingestion from real-time chat requests, guaranteeing high availability."
+  },
+  {
+    "id": "post_005",
+    "title": "Prompt Engineering & Grounding Strategies for Character Twins",
+    "author": "AI Engineer",
+    "date": "2026-07-02",
+    "tags": ["Prompt Engineering", "LLMTwin", "RAG", "Persona"],
+    "source_url": "https://blog.example.com/prompt-engineering-character-twins",
+    "content": "To build an authentic AI Character Twin, system prompt design is just as important as fine-tuning and vector retrieval.\n\nOur system prompt follows a 4-layer structure:\n1. Persona Definition: Explicitly define the author's background, expertise, and writing characteristics (e.g., concise, practical, technical).\n2. Context Grounding: Inject top-k retrieved snippets from Qdrant with strict instructions to prioritize past writing.\n3. Negative Constraints: Instruct the model never to fabricate personal anecdotes or claim credentials outside the retrieved context.\n4. Output Formatting: Enforce clean Markdown with crisp bullet points and actionable takeaways."
+  }
+]
