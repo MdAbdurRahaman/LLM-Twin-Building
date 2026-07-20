@@ -1,6 +1,6 @@
 # LLM Twin - Personal AI Writing Character & Production RAG System
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-Hugging_Face-FFD21E?style=for-the-badge)](https://huggingface.co/spaces/your-username/llm-twin)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Streamlit_Cloud-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://llm-twin-building-wnnn5ayppcpiler36kwtet.streamlit.app)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-3776AB.svg?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![Qdrant](https://img.shields.io/badge/Qdrant-Vector_DB-red?style=for-the-badge)](https://qdrant.tech/)
 [![Groq](https://img.shields.io/badge/Groq-Llama_3-orange?style=for-the-badge)](https://groq.com/)
@@ -9,11 +9,11 @@
 
 ---
 
-## Deliverables & Live Test Links
+## 📌 Deliverables & Live URLs
 
-- **GitHub Repository Deliverable:** `https://github.com/your-username/llm-twin`
-- **Live Demo Web URL (for Teacher Evaluation):** [https://huggingface.co/spaces/your-username/llm-twin](https://huggingface.co/spaces/your-username/llm-twin)
-- **Model Registry (Fine-Tuned Adapter):** [Hugging Face Model Hub](https://huggingface.co/your-username/llm-twin-llama3-lora)
+- **GitHub Repository (Deliverable Submission):** [https://github.com/MdAbdurRahaman/LLM-Twin-Building](https://github.com/MdAbdurRahaman/LLM-Twin-Building)
+- **Live Demo Web Application URL:** [https://llm-twin-building-wnnn5ayppcpiler36kwtet.streamlit.app](https://llm-twin-building-wnnn5ayppcpiler36kwtet.streamlit.app)
+- **Model Architecture:** Groq Llama 3.3 70B + Qdrant Cloud Vector RAG + QLoRA Fine-Tuning Adapter
 
 ---
 
