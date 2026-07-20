@@ -28,6 +28,48 @@ st.markdown("""
     .stApp {
         background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
     }
+    
+    /* High contrast text styles for Chat Messages */
+    [data-testid="stChatMessageContent"], 
+    [data-testid="stChatMessageContent"] p,
+    [data-testid="stChatMessageContent"] div,
+    [data-testid="stChatMessageContent"] span,
+    [data-testid="stChatMessageContent"] li,
+    .stMarkdown, .stMarkdown p, .stMarkdown div, .stMarkdown span, .stMarkdown li {
+        color: #f8fafc !important;
+        font-size: 15px !important;
+        line-height: 1.6 !important;
+    }
+
+    [data-testid="stChatMessageContent"] strong, .stMarkdown strong {
+        color: #38bdf8 !important;
+        font-weight: 600 !important;
+    }
+
+    [data-testid="stChatMessageContent"] blockquote, .stMarkdown blockquote {
+        border-left: 4px solid #818cf8 !important;
+        background: rgba(30, 41, 59, 0.85) !important;
+        color: #f1f5f9 !important;
+        padding: 12px 18px !important;
+        border-radius: 8px !important;
+        margin: 10px 0 !important;
+    }
+
+    [data-testid="stChatMessageContent"] code, .stMarkdown code {
+        color: #f472b6 !important;
+        background: rgba(15, 23, 42, 0.9) !important;
+        padding: 2px 6px !important;
+        border-radius: 4px !important;
+    }
+
+    [data-testid="stChatMessage"] {
+        background: rgba(30, 41, 59, 0.6) !important;
+        border: 1px solid rgba(99, 102, 241, 0.25) !important;
+        border-radius: 12px !important;
+        margin-bottom: 12px !important;
+        padding: 12px !important;
+    }
+
     .hero-banner {
         background: rgba(30, 41, 59, 0.7);
         border: 1px solid rgba(99, 102, 241, 0.3);
